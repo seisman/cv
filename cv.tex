@@ -6,23 +6,26 @@
 \newcommand{\LastName}{Tian}
 \newcommand{\Initials}{D}
 \newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\MyRole}{Ph.D. Candidate in Geophysics}
 \newcommand{\Tian}{\textbf{\LastName, \Initials.}}  % For citations
 \newcommand{\Email}{dongzhi@mail.ustc.edu.cn}
 \newcommand{\Website}{http://home.ustc.edu.cn/~dongzhi}
 \newcommand{\Phone}{+86-150\,5511\,7035}
 \newcommand{\Affiliation}{
-    School of Earth and Space Sciences
-    -- University of Science and Technology of China
+    Laboratory of Seismology and Physics of Earth's Interior; \\
+    School of Earth and Space Sciences,
+    University of Science and Technology of China
 }
 \newcommand{\Address}{
-    No.96, JinZhai Road Baohe District, Hefei, Anhui, 230026, China
+    Room 1127, Research Building, No. 96, Jinzhai Road, Hefei, Anhui 230026, China
 }
 
 % Control the font size
 \usepackage{anyfontsize}
 
-% Macros to add links
+% Useful macros
 \newcommand{\DOI}[1]{doi:\href{https://doi.org/#1}{#1}}
+\newcommand{\invited}{\textbf{[invited]}}
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
@@ -44,7 +47,7 @@
 
 % Set fonts. Requires compilation with xelatex
 \usepackage{fontspec}
-\setmainfont[BoldFont=SourceSansPro-SemiBold]{SourceSansPro-Light}
+\setmainfont[BoldFont=SourceSansPro-Bold]{SourceSansPro-Regular}
 \setmonofont{Source Code Pro}
 \usepackage{fontawesome}
 
@@ -89,10 +92,8 @@
 \begin{center}
     {\fontsize{36pt}{0}\selectfont \MyName}
     \\[0.5cm]
-    {\fontsize{15pt}{0}\selectfont Ph.D. Candidate in Geophysics}
-    %\\[0.5cm]
-    %{\fontsize{13pt}{0}\selectfont \Title \, | \, \monthyear\today}
-    \\[0.5cm]
+    {\fontsize{16pt}{0}\selectfont \MyRole}
+    \\[0.3cm]
     {\fontsize{10pt}{0}\selectfont
         \Affiliation
         \\[0.2cm]
@@ -111,6 +112,7 @@
 \input{publications}
 \input{abstracts}
 \input{talks}
+\input{skills}
 \input{referees}
 
 \end{document}
