@@ -50,7 +50,7 @@
 \usepackage{fontspec}
 \setmainfont[BoldFont=SourceSansPro-Bold]{SourceSansPro-Regular}
 \setmonofont{Source Code Pro}
-\usepackage{fontawesome}
+%\usepackage{fontawesome}
 
 % Set fancy headers
 \usepackage{fancyhdr}
@@ -103,9 +103,12 @@
         \\[0.2cm]
         \Address
         \\[0.08cm]
-        \makefield{\faEnvelopeO}{\href{mailto:\Email}{\texttt{\Email}}}
+%       \makefield{\faEnvelopeO}{\href{mailto:\Email}{\texttt{\Email}}}
+%       \, | \,
+%       \makefield{\faGlobe}{\url{\Website}}
+        Email: \href{mailto:\Email}{\texttt{\Email}}
         \, | \,
-        \makefield{\faGlobe}{\url{\Website}}
+        Website: \url{\Website}
     }
 \end{center}
 
