@@ -2,4 +2,7 @@
 
 Template from: https://github.com/leouieda/cv
 
-Preview my CV [here](cv.pdf).
+Preview my CV:
+
+- [English version](en/cv.pdf)
+- [Chinese version (中文版)](cn/cv.pdf)
