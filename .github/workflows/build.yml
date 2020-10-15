@@ -12,8 +12,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Install LaTeX
-        run: sudo apt-get install texlive texlive-xetex
+        run: sudo apt-get install texlive texlive-xetex latexmk texlive-lang-chinese
+
       - name: Compile PDF
         run: |
           make
