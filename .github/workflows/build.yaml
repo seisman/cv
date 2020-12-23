@@ -1,0 +1,36 @@
+#
+# Build the cv
+#
+name: Build
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.6.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install TinyTeX
+        run: |
+          curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+          echo "${HOME}/bin" >> $GITHUB_PATH
+
+      - name: Install LaTeX packages
+        run: |
+          tlmgr install anyfontsize datetime geometry enumitem xcolor fancyhdr \
+                        hyperref etaremune fmtcount sourcesanspro sourcecodepro ctex
+
+      - name: Build CV
+        run: make
