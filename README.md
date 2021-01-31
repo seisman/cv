@@ -1,5 +1,7 @@
 # Dongdong Tian's Curriculum Vitae
 
+[![Build](https://github.com/seisman/cv/workflows/Build/badge.svg)](https://github.com/seisman/cv/actions?query=workflow%3ABuild)
+
 These are the LaTeX sources for my academic CV.
 
 ## Preview
