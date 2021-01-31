@@ -7,9 +7,9 @@ on:
   push:
     branches:
       - master
-  # Schedule daily builds
+  # Schedule monthly builds
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 1 * *'
 
 jobs:
   build:
