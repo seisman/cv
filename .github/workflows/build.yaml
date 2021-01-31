@@ -47,3 +47,17 @@ jobs:
 
       - name: Build CV
         run: make
+
+      - name: Prepare files for gh-pages
+        run: |
+          mkdir public
+          mv cn/cv.pdf public/DTian_cv_cn.pdf
+          mv en/cv.pdf public/DTian_cv_en.pdf
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'push'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true
