@@ -1,5 +1,11 @@
 all: cv_en.pdf cv_cn.pdf clean
 
+install_tex:
+	curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+	tlmgr install anyfontsize ctex datetime enumitem etaremune \
+		everysel fancyhdr fmtcount geometry hyperref sourcesanspro \
+    	sourcecodepro xcolor
+
 cv_en.pdf: en/*.tex
 	cd en && latexmk -xelatex cv.tex
 
