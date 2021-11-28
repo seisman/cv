@@ -1,6 +1,6 @@
-# Dongdong Tian's Curriculum Vitae
+# TIAN Dongdong (田冬冬)'s Curriculum Vitae
 
-[![Build](https://github.com/seisman/cv/workflows/Build/badge.svg)](https://github.com/seisman/cv/actions?query=workflow%3ABuild)
+[![Build](https://github.com/seisman/cv/actions/workflows/build.yaml/badge.svg)](https://github.com/seisman/cv/actions/workflows/build.yaml)
 
 These are the LaTeX sources for my academic CV.
 
@@ -14,8 +14,8 @@ Preview my CV:
 ## Build
 
 To build the CV, you need to have LaTeX installed. The full LaTeX distribution
-(e.g., TeXLive on Linux, and MacTeX on macOS) are usually very big (>5 GB),
-thus I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
+(e.g., TeXLive on Linux or MacTeX on macOS) are usually too big (>5 GB).
+I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
 (< 100MB).
 
 1. 	Install TinyTeX:
