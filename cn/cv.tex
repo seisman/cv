@@ -13,10 +13,10 @@
 \newcommand{\Website}{https://me.seisman.info}
 \newcommand{\Phone}{}
 \newcommand{\Affiliation}{
-	中国地质大学（武汉），地球物理与空间信息学院
+	中国地质大学（武汉）\hspace{0.2cm} 地球物理与空间信息学院
 }
 \newcommand{\Address}{
-
+	湖北省武汉市鲁磨路 388 号基委楼 205 室
 }
 
 % Control the font size
@@ -28,7 +28,7 @@
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
-\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+\newdateformat{monthyear}{\THEYEAR/\THEMONTH}
 
 % Set the page margins
 \usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
@@ -61,7 +61,7 @@
     \hspace{0.2cm} -- \hspace{0.2cm}
     \Title
     \hspace{0.2cm} -- \hspace{0.2cm}
-    2020
+    \monthyear\today
 }
 \rhead{}
 \cfoot{\fontsize{10pt}{0}\selectfont \thepage}
@@ -99,11 +99,11 @@
     {\fontsize{11pt}{0}\selectfont
         \Affiliation
         \\[0.2cm]
-        %\Address
-        %\\[0.08cm]
-%       \makefield{\faEnvelopeO}{\href{mailto:\Email}{\texttt{\Email}}}
-%       \, | \,
-%       \makefield{\faGlobe}{\url{\Website}}
+        \Address
+        \\[0.08cm]
+        %\makefield{\faEnvelopeO}{\href{mailto:\Email}{\texttt{\Email}}}
+        %\, | \,
+        %\makefield{\faGlobe}{\url{\Website}}
         邮箱: \href{mailto:\Email}{\texttt{\Email}}
         \, | \,
         主页: \url{\Website}
