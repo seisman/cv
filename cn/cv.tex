@@ -1,7 +1,7 @@
 \documentclass[11pt, a4paper]{article}
-\usepackage[fontset=fandol]{ctex} % Chinese support
+\usepackage[fontset=fandol]{ctex} % 中文支持
 
-% Identifying information
+% 个人信息
 \newcommand{\Title}{学术简历}
 \newcommand{\FirstName}{Dongdong}
 \newcommand{\LastName}{Tian}
@@ -15,43 +15,44 @@
 \newcommand{\Affiliation}{中国地质大学（武汉）\hspace{1ex} 地球物理与空间信息学院}
 \newcommand{\Address}{湖北省武汉市洪山区鲁磨路 388 号基委楼 205 室}
 
-% Control the font size
+% 控制文字字体
 \usepackage{anyfontsize}
 
-% Useful macros
+% 一些命令
 \newcommand{\DOI}[1]{doi:\href{https://dx.doi.org/#1}{#1}}
 \newcommand{\invited}{\textbf{[邀请报告]}}
 
-% Define command to insert month name and year as date
+% 以“年/月”格式显示日期
 \usepackage{datetime}
 \newdateformat{monthyear}{\THEYEAR/\THEMONTH}
 
-% Set the page margins
+% 设置页面边距
 \usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
 
-% Set the spacing before and after section title
+% 设置每节标题的前后空白
 \usepackage{titlesec}
 \titlespacing*{\section}{0pt}{1ex}{1ex}
 
-% Increase the line spacing
+% 设置行间距
 %\renewcommand{\baselinestretch}{1.1}
 \renewcommand{\arraystretch}{1.4}
 \setlength{\parindent}{0pt} % no indent for paragraph
 
-% Remove space between items in itemize and enumerate
+% 减小列表中各项之间的间距
 \usepackage{enumitem}
 \setlist{itemsep=0.2em}
 
-% Use custom colors
+% 使用自定义颜色
 \usepackage[usenames,dvipsnames]{xcolor}
 
-% Set fonts. Requires compilation with xelatex
+% 设置字体
 \usepackage{fontspec}
 \usepackage[default,semibold]{sourcesanspro}
 \usepackage{sourcecodepro}
 
-% Set fancy headers
+% 设置页眉页脚
 \usepackage{fancyhdr}
+% 页眉
 \pagestyle{fancy}
 \fancyhf{}
 \chead{
@@ -64,10 +65,11 @@
     \monthyear\today
 }
 \rhead{}
+% 页脚
 \cfoot{\fontsize{10pt}{0}\selectfont \thepage}
 \renewcommand{\headrulewidth}{0pt}
 
-% Metadata for the PDF output and control of hyperlinks
+% PDF 元信息以及超链接
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{ % document metadata
     pdftitle = {\MyName\ - \Title},
@@ -81,16 +83,15 @@
 \definecolor{MarkerColour}{HTML}{B6073F}
 \newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2}
 
-% numbering items in reversed orders
+% 对列表各项逆序编号（用于对文章进行编号）
 \usepackage{etaremune}
 
 \begin{document}
 
-% No header for the first page
+% 首页不显示页眉页脚
 \thispagestyle{empty}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% HEADER
+% CV 封面页
 \begin{center}
     \kaishu
     {\fontsize{28pt}{0}\selectfont \MyName}
