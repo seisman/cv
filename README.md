@@ -37,6 +37,7 @@ I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
             hyperref \
             sourcesanspro \
             sourcecodepro \
+            titlesec \
             xcolor
 
 3. 	Build the CV:

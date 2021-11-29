@@ -43,6 +43,7 @@ jobs:
             hyperref \
             sourcesanspro \
             sourcecodepro \
+            titlesec \
             xcolor
 
       - name: Build CV
