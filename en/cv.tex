@@ -1,4 +1,9 @@
 \documentclass[11pt, a4paper]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}  % Set the page margins
+\usepackage{fontspec}  % Set fonts
+\usepackage[default,semibold]{sourcesanspro}
+\usepackage{sourcecodepro}
+\usepackage{etaremune}  % numbering items in reversed orders
 
 % Identifying information
 \newcommand{\Title}{Curriculum Vit\ae}
@@ -11,13 +16,8 @@
 \newcommand{\Email}{dtian@cug.edu.cn}
 \newcommand{\Website}{https://me.seisman.info}
 \newcommand{\Phone}{}
-\newcommand{\Affiliation}{
-	Institute of Geophysics and Geomatics,
-	China University of Geosciences
-}
-\newcommand{\Address}{
-	Room 205, Basic Building, 388 Lumo Rd, Hongshan, Wuhan, Hubei, China
-}
+\newcommand{\Affiliation}{Institute of Geophysics and Geomatics, China University of Geosciences}
+\newcommand{\Address}{Room 205, Basic Building, 388 Lumo Rd, Hongshan, Wuhan, Hubei, China}
 
 % Control the font size
 \usepackage{anyfontsize}
@@ -30,8 +30,9 @@
 \usepackage{datetime}
 \newdateformat{monthyear}{\THEYEAR/\THEMONTH}
 
-% Set the page margins
-\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+% Control the spacing before and after section title
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{1ex}{1ex}
 
 % Increase the line spacing
 %\renewcommand{\baselinestretch}{1.1}
@@ -42,16 +43,9 @@
 \usepackage{enumitem}
 \setlist{itemsep=0.2em}
 
-% Use custom colors
-\usepackage[usenames,dvipsnames]{xcolor}
-
-% Set fonts. Requires compilation with xelatex
-\usepackage{fontspec}
-\usepackage[default,semibold]{sourcesanspro}
-\usepackage{sourcecodepro}
-
 % Set fancy headers
 \usepackage{fancyhdr}
+% header
 \pagestyle{fancy}
 \fancyhf{}
 \chead{
@@ -64,8 +58,14 @@
     \monthyear\today
 }
 \rhead{}
+% footer
 \cfoot{\fontsize{10pt}{0}\selectfont \thepage}
 \renewcommand{\headrulewidth}{0pt}
+
+% Use custom colors
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{MarkerColour}{HTML}{B6073F}
+\newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2}
 
 % Metadata for the PDF output and control of hyperlinks
 \usepackage[colorlinks=true]{hyperref}
@@ -78,25 +78,17 @@
     urlcolor=MidnightBlue,
 }
 
-\definecolor{MarkerColour}{HTML}{B6073F}
-\newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2}
-
-% numbering items in reversed orders
-\usepackage{etaremune}
-
 \begin{document}
-
 % No header for the first page
 \thispagestyle{empty}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% HEADER
+% CV header
 \begin{center}
-    {\fontsize{36pt}{0}\selectfont \MyName}
+    {\fontsize{28pt}{0}\selectfont \MyName}
     \\[0.5cm]
-    {\fontsize{16pt}{0}\selectfont \MyRole}
+    {\fontsize{17pt}{0}\selectfont \MyRole}
     \\[0.3cm]
-    {\fontsize{10pt}{0}\selectfont
+    {\fontsize{12pt}{0}\selectfont
         \Affiliation
         \\[0.2cm]
         \Address
