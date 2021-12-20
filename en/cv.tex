@@ -55,7 +55,7 @@
 \usepackage[default,semibold]{sourcesanspro}
 \usepackage{sourcecodepro}
 % numbering items in reversed orders
-\usepackage{etaremune}
+\usepackage[itemsep=2pt]{etaremune}
 
 % Control the font size
 \usepackage{anyfontsize}
@@ -70,14 +70,15 @@
 % Disable numbering of sections
 \titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
 
-% Increase the line spacing
-%\renewcommand{\baselinestretch}{1.1}
-\renewcommand{\arraystretch}{1.4}
+% Control line spacing
+\renewcommand{\baselinestretch}{1.2}
+% Control vertical spacing of tables
+\renewcommand{\arraystretch}{1.2}
 \setlength{\parindent}{0pt} % no indent for paragraph
 
-% Remove space between items in itemize and enumerate
+% Control space between items in itemize and enumerate
 \usepackage{enumitem}
-\setlist{itemsep=0.2em}
+\setlist{itemsep=0pt}
 
 % Get the total number of pages
 \usepackage{lastpage}

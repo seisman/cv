@@ -54,7 +54,7 @@
 \usepackage[default,semibold]{sourcesanspro}
 \usepackage{sourcecodepro}
 % 对列表各项逆序编号（用于对文章进行编号）
-\usepackage{etaremune}
+\usepackage[itemsep=2pt]{etaremune}
 
 % 控制文字字号
 \usepackage{anyfontsize}
@@ -70,13 +70,14 @@
 \titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
 
 % 设置行间距
-%\renewcommand{\baselinestretch}{1.1}
-\renewcommand{\arraystretch}{1.4}
+\renewcommand{\baselinestretch}{1.2}
+% 设置表格的垂直距离
+\renewcommand{\arraystretch}{1.2}
 \setlength{\parindent}{0pt} % no indent for paragraph
 
-% 减小列表中各项之间的间距
+% 设置列表中各项之间的间距
 \usepackage{enumitem}
-\setlist{itemsep=0.2em}
+\setlist{itemsep=0pt}
 
 % 获取总页数
 \usepackage{lastpage}
