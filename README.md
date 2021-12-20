@@ -35,6 +35,7 @@ I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
             fmtcount \
             geometry \
             hyperref \
+            lastpage \
             sourcesanspro \
             sourcecodepro \
             titlesec \
