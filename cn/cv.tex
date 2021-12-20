@@ -12,8 +12,10 @@
 \newcommand{\Role}{特任教授}
 \newcommand{\Email}{dtian@cug.edu.cn}
 \newcommand{\Website}{me.seisman.info}
-\newcommand{\Affiliation}{中国地质大学（武汉）\hspace{1ex} 地球物理与空间信息学院}
-\newcommand{\Address}{湖北省武汉市洪山区鲁磨路 388 号基委楼 205 室}
+\newcommand{\Github}{seisman}
+\newcommand{\Orcid}{0000-0001-7967-1197}
+\newcommand{\Affiliation}{中国地质大学（武汉）\\ 地球物理与空间信息学院}
+\newcommand{\Address}{湖北省武汉市洪山区鲁磨路 388 号\\ 基委楼 205 室}
 
 % 在文章列表中引用作者和合作者
 \newcommand{\Me}{\textbf{Tian, D.}} % 加粗显示
@@ -53,6 +55,10 @@
 \usepackage{fontspec}
 \usepackage[default,semibold]{sourcesanspro}
 \usepackage{sourcecodepro}
+
+% Use fontawesome icons
+\usepackage[fixed]{fontawesome5}
+
 % 对列表各项逆序编号（用于对文章进行编号）
 \usepackage[itemsep=2pt]{etaremune}
 
@@ -130,21 +136,31 @@
 % CV 封面页
 \thispagestyle{empty} % 首页不显示页眉页脚
 \begin{center}
-    \kaishu
-    {\fontsize{28pt}{0}\selectfont \Name}
-    \\[0.5cm]
-    {\fontsize{17pt}{0}\selectfont \Role}
-    \\[0.3cm]
-    {\fontsize{13pt}{0}\selectfont
-        \Affiliation
-        \\[0.2cm]
-        \Address
-        \\[0.08cm]
-        邮箱: \href{mailto:\Email}{\texttt{\Email}}
-        \, | \,
-        主页: \href{https://\Website}{\Website}
-    }
+\kaishu
+{\fontsize{24pt}{0}\selectfont \Name \hspace{1ex}} \\[0.4cm]
+{\fontsize{16pt}{0}\selectfont \Role} \\[0.2cm]
 \end{center}
+\begin{minipage}[t]{0.7\textwidth}
+  \kaishu
+  \fontsize{12pt}{15pt}\selectfont
+  \Affiliation
+  \\
+  \Address
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+  \kaishu
+  \fontsize{12pt}{15pt}\selectfont
+  \begin{flushleft}
+    \faEnvelope \href{mailto:\Email}{\texttt{\Email}}
+	\\
+	\faOrcid \href{https://orcid.org/\Orcid}{\Orcid}
+	\\
+    \faGlobe \href{https://\Website}{\Website}
+	\\
+	\faGithub \href{https://github.com/\Github}{\Github}
+  \end{flushleft}
+\end{minipage}
+\vspace{0.2cm}
 
 \input{education}
 \input{employment}

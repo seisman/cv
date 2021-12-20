@@ -13,8 +13,10 @@
 \newcommand{\Role}{Associate Professor}
 \newcommand{\Email}{dtian@cug.edu.cn}
 \newcommand{\Website}{me.seisman.info}
-\newcommand{\Affiliation}{Institute of Geophysics and Geomatics, China University of Geosciences}
-\newcommand{\Address}{Room 205, Basic Building, 388 Lumo Rd, Hongshan, Wuhan, Hubei, China}
+\newcommand{\Github}{seisman}
+\newcommand{\Orcid}{0000-0001-7967-1197}
+\newcommand{\Affiliation}{Institute of Geophysics and Geomatics \\ China University of Geosciences}
+\newcommand{\Address}{Room 205, Basic Building \\ 388 Lumo Rd, Hongshan, Wuhan, Hubei, China}
 
 % Citing names of collaborators in publications
 \newcommand{\Me}{\textbf{Tian, D.}}  % highlight my name
@@ -54,6 +56,10 @@
 \usepackage{fontspec}
 \usepackage[default,semibold]{sourcesanspro}
 \usepackage{sourcecodepro}
+
+% Use fontawesome icons
+\usepackage[fixed]{fontawesome5}
+
 % numbering items in reversed orders
 \usepackage[itemsep=2pt]{etaremune}
 
@@ -131,20 +137,28 @@
 % CV header
 \thispagestyle{empty} % No header for the first page
 \begin{center}
-	{\fontsize{28pt}{0}\selectfont \Name \hspace{1ex} \kaishu{\CNName}}
-    \\[0.5cm]
-    {\fontsize{17pt}{0}\selectfont \Role}
-    \\[0.3cm]
-    {\fontsize{12pt}{0}\selectfont
-        \Affiliation
-        \\[0.2cm]
-        \Address
-        \\[0.08cm]
-        Email: \href{mailto:\Email}{\texttt{\Email}}
-        \, | \,
-        Website: \href{https://\Website}{\Website}
-    }
+{\fontsize{24pt}{0}\selectfont \Name \hspace{1ex} \kaishu{\CNName}} \\[0.4cm]
+{\fontsize{16pt}{0}\selectfont \Role} \\[0.2cm]
 \end{center}
+\begin{minipage}[t]{0.7\textwidth}
+  \fontsize{12pt}{15pt}\selectfont
+  \Affiliation
+  \\
+  \Address
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+  \fontsize{12pt}{15pt}\selectfont
+  \begin{flushleft}
+    \faEnvelope \href{mailto:\Email}{\texttt{\Email}}
+	\\
+	\faOrcid \href{https://orcid.org/\Orcid}{\Orcid}
+	\\
+    \faGlobe \href{https://\Website}{\Website}
+	\\
+	\faGithub \href{https://github.com/\Github}{\Github}
+  \end{flushleft}
+\end{minipage}
+\vspace{0.2cm}
 
 \input{education}
 \input{employment}
