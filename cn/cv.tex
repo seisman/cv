@@ -1,26 +1,22 @@
-\documentclass[11pt, a4paper]{article}
-\usepackage[fontset=fandol]{ctex}  % 中文支持
-\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}  % 设置页面边距
-\usepackage{fontspec}  % 设置字体
-\usepackage[default,semibold]{sourcesanspro}
-\usepackage{sourcecodepro}
-\usepackage{etaremune}  % 对列表各项逆序编号（用于对文章进行编号）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 学术简历 LaTeX 模板
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,a4paper]{article}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 自定义信息
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 个人信息
 \newcommand{\Title}{学术简历}
-\newcommand{\FirstName}{Dongdong}
-\newcommand{\LastName}{Tian}
-\newcommand{\Initials}{D}
-\newcommand{\MyName}{田冬冬}
-\newcommand{\MyRole}{特任教授}
-\newcommand{\Tian}{\textbf{\LastName, \Initials.}}  % For citations
+\newcommand{\Name}{田冬冬}
+\newcommand{\Role}{特任教授}
 \newcommand{\Email}{dtian@cug.edu.cn}
 \newcommand{\Website}{me.seisman.info}
-\newcommand{\Phone}{}
 \newcommand{\Affiliation}{中国地质大学（武汉）\hspace{1ex} 地球物理与空间信息学院}
 \newcommand{\Address}{湖北省武汉市洪山区鲁磨路 388 号基委楼 205 室}
 
-% 合作者
+% 在文章列表中引用作者和合作者
+\newcommand{\Me}{\textbf{Tian, D.}} % 加粗显示
 \newcommand{\XChen}{Chen, X.}
 \newcommand{\SDorfman}{Dorfman, S. M.}
 \newcommand{\WFan}{Fan, W.}
@@ -46,11 +42,22 @@
 \newcommand{\MZhang}{Zhang, M.}
 \newcommand{\YZhang}{Zhang, Y.}
 
-% 控制文字字体
-\usepackage{anyfontsize}
-
 % 一些命令
 \newcommand{\DOI}[1]{doi:\href{https://dx.doi.org/#1}{#1}}
+
+% 中文支持
+\usepackage[fontset=fandol]{ctex}
+% 设置页面边距
+\usepackage[margin=2.5cm]{geometry}
+% 设置字体
+\usepackage{fontspec}
+\usepackage[default,semibold]{sourcesanspro}
+\usepackage{sourcecodepro}
+% 对列表各项逆序编号（用于对文章进行编号）
+\usepackage{etaremune}
+
+% 控制文字字号
+\usepackage{anyfontsize}
 
 % 以“年/月”格式显示日期
 \usepackage{datetime}
@@ -71,60 +78,56 @@
 \usepackage{enumitem}
 \setlist{itemsep=0.2em}
 
+% 获取总页数
+\usepackage{lastpage}
+
 % 设置页眉页脚
 \usepackage{fancyhdr}
-% 页眉
 \pagestyle{fancy}
 \fancyhf{}
 \chead{
     \itshape
     \fontsize{10pt}{12pt}\selectfont
-    \MyName
+    \Name
     \hspace{0.2cm} -- \hspace{0.2cm}
     \Title
     \hspace{0.2cm} -- \hspace{0.2cm}
     \monthyear\today
 }
 \rhead{}
-% 页脚
-\cfoot{\fontsize{10pt}{0}\selectfont \thepage}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage/\pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 
 % 使用自定义颜色
 \usepackage[usenames,dvipsnames]{xcolor}
-\definecolor{MarkerColour}{HTML}{B6073F}
-\newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2}
 
 % PDF 元信息以及超链接
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{ % document metadata
-    pdftitle = {\MyName\ - \Title},
-    pdfauthor = {\MyName},
+    pdftitle = {\Name\ - \Title},
+    pdfauthor = {\Name},
     linkcolor=black,
     citecolor=black,
     filecolor=black,
     urlcolor=MidnightBlue,
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-% 首页不显示页眉页脚
-\thispagestyle{empty}
 
 % CV 封面页
+\thispagestyle{empty} % 首页不显示页眉页脚
 \begin{center}
     \kaishu
-    {\fontsize{28pt}{0}\selectfont \MyName}
+    {\fontsize{28pt}{0}\selectfont \Name}
     \\[0.5cm]
-    {\fontsize{17pt}{0}\selectfont \MyRole}
+    {\fontsize{17pt}{0}\selectfont \Role}
     \\[0.3cm]
     {\fontsize{13pt}{0}\selectfont
         \Affiliation
         \\[0.2cm]
         \Address
         \\[0.08cm]
-        %\makefield{\faEnvelopeO}{\href{mailto:\Email}{\texttt{\Email}}}
-        %\, | \,
-        %\makefield{\faGlobe}{\url{\Website}}
         邮箱: \href{mailto:\Email}{\texttt{\Email}}
         \, | \,
         主页: \href{https://\Website}{\Website}

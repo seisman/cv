@@ -1,28 +1,22 @@
-\documentclass[11pt, a4paper]{article}
-\usepackage[fontset=fandol]{ctex}  % ctex is needed to show my Chinese name
-\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}  % Set the page margins
-\usepackage{fontspec}  % Set fonts
-\usepackage[default,semibold]{sourcesanspro}
-\usepackage{sourcecodepro}
-\usepackage{etaremune}  % numbering items in reversed orders
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A LaTeX template for academic CV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,a4paper]{article}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom Information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Identifying information
 \newcommand{\Title}{Curriculum Vit\ae}
-\newcommand{\FirstName}{Dongdong}
-\newcommand{\LastName}{Tian}
-\newcommand{\Initials}{D}
-\newcommand{\MyName}{TIAN Dongdong}
-\newcommand{\MyCNName}{田冬冬}
-\newcommand{\MyFullName}{\MyName\hspace{1ex}\kaishu{\MyCNName}}
-\newcommand{\MyRole}{Associate Professor}
-\newcommand{\Tian}{\textbf{\LastName, \Initials.}}  % For citations
+\newcommand{\Name}{TIAN Dongdong \hspace{1ex} \kaishu{田冬冬}}
+\newcommand{\Role}{Associate Professor}
 \newcommand{\Email}{dtian@cug.edu.cn}
 \newcommand{\Website}{me.seisman.info}
-\newcommand{\Phone}{}
 \newcommand{\Affiliation}{Institute of Geophysics and Geomatics, China University of Geosciences}
 \newcommand{\Address}{Room 205, Basic Building, 388 Lumo Rd, Hongshan, Wuhan, Hubei, China}
 
-% Collaborators
+% Citing names of collaborators in publications
+\newcommand{\Me}{\textbf{Tian, D.}}  % highlight my name
 \newcommand{\XChen}{Chen, X.}
 \newcommand{\SDorfman}{Dorfman, S. M.}
 \newcommand{\WFan}{Fan, W.}
@@ -48,11 +42,22 @@
 \newcommand{\MZhang}{Zhang, M.}
 \newcommand{\YZhang}{Zhang, Y.}
 
-% Control the font size
-\usepackage{anyfontsize}
-
 % Useful macros
 \newcommand{\DOI}[1]{doi:\href{https://dx.doi.org/#1}{#1}}
+
+% ctex is needed to show my Chinese name
+\usepackage[fontset=fandol]{ctex}
+% Set the page margins
+\usepackage[margin=2.5cm]{geometry}
+% Set fonts
+\usepackage{fontspec}
+\usepackage[default,semibold]{sourcesanspro}
+\usepackage{sourcecodepro}
+% numbering items in reversed orders
+\usepackage{etaremune}
+
+% Control the font size
+\usepackage{anyfontsize}
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
@@ -73,59 +78,55 @@
 \usepackage{enumitem}
 \setlist{itemsep=0.2em}
 
+% Get the total number of pages
+\usepackage{lastpage}
+
 % Set fancy headers
 \usepackage{fancyhdr}
-% header
 \pagestyle{fancy}
 \fancyhf{}
 \chead{
     \itshape
     \fontsize{10pt}{12pt}\selectfont
-    \MyName
+    \Name
     \hspace{0.2cm} -- \hspace{0.2cm}
     \Title
     \hspace{0.2cm} -- \hspace{0.2cm}
     \monthyear\today
 }
 \rhead{}
-% footer
-\cfoot{\fontsize{10pt}{0}\selectfont \thepage}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage/\pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 
 % Use custom colors
 \usepackage[usenames,dvipsnames]{xcolor}
-\definecolor{MarkerColour}{HTML}{B6073F}
-\newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2}
 
 % Metadata for the PDF output and control of hyperlinks
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{ % document metadata
-    pdftitle = {\MyName\ - \Title},
-    pdfauthor = {\MyName},
+    pdftitle = {\Name\ - \Title},
+    pdfauthor = {\Name},
     linkcolor=black,
     citecolor=black,
     filecolor=black,
     urlcolor=MidnightBlue,
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-% No header for the first page
-\thispagestyle{empty}
 
 % CV header
+\thispagestyle{empty} % No header for the first page
 \begin{center}
-    {\fontsize{28pt}{0}\selectfont \MyFullName}
+    {\fontsize{28pt}{0}\selectfont \Name}
     \\[0.5cm]
-    {\fontsize{17pt}{0}\selectfont \MyRole}
+    {\fontsize{17pt}{0}\selectfont \Role}
     \\[0.3cm]
     {\fontsize{12pt}{0}\selectfont
         \Affiliation
         \\[0.2cm]
         \Address
         \\[0.08cm]
-%       \makefield{\faEnvelopeO}{\href{mailto:\Email}{\texttt{\Email}}}
-%       \, | \,
-%       \makefield{\faGlobe}{\url{\Website}}
         Email: \href{mailto:\Email}{\texttt{\Email}}
         \, | \,
         Website: \href{https://\Website}{\Website}
