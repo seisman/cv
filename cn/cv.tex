@@ -79,6 +79,17 @@
 \usepackage{enumitem}
 \setlist{itemsep=0pt}
 
+% 长表格
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{environ}
+\NewEnviron{EntriesTable}[3]{
+\vspace{-1.25em}
+\begin{tabularx}{\textwidth}{p{#1\textwidth}@{\hspace{#2\textwidth}}p{#3\textwidth}}
+    \BODY
+\end{tabularx}
+}
+
 % 获取总页数
 \usepackage{lastpage}
 

@@ -24,22 +24,7 @@ I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
 
 2. 	Install LaTeX packages needed by the CV template:
 
-        tlmgr install \
-            anyfontsize \
-            ctex \
-            datetime \
-            enumitem \
-            etaremune \
-            everysel \
-            fancyhdr \
-            fmtcount \
-            geometry \
-            hyperref \
-            lastpage \
-            sourcesanspro \
-            sourcecodepro \
-            titlesec \
-            xcolor
+		make install_tex
 
 3. 	Build the CV:
 
