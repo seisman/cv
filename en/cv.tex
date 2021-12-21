@@ -136,6 +136,8 @@
 
 % CV header
 \thispagestyle{empty} % No header for the first page
+{
+\fontfamily{ptm}
 \begin{center}
 {\fontsize{24pt}{0}\selectfont \Name \hspace{1ex} \kaishu{\CNName}} \\[0.4cm]
 {\fontsize{16pt}{0}\selectfont \Role} \\[0.2cm]
@@ -149,7 +151,7 @@
 \begin{minipage}[t]{0.3\textwidth}
   \fontsize{12pt}{15pt}\selectfont
   \begin{flushleft}
-    \faEnvelope \href{mailto:\Email}{\texttt{\Email}}
+    \faEnvelope \href{mailto:\Email}{\Email}
 	\\
 	\faOrcid \href{https://orcid.org/\Orcid}{\Orcid}
 	\\
@@ -158,6 +160,7 @@
 	\faGithub \href{https://github.com/\Github}{\Github}
   \end{flushleft}
 \end{minipage}
+}
 \vspace{0.2cm}
 
 \input{education}
