@@ -4,12 +4,12 @@
 
 These are the LaTeX sources for my academic CV.
 
-## Preview
+## Download
 
-Preview my CV:
+Download my CV:
 
 - [English version](https://github.com/seisman/cv/raw/gh-pages/DTian_cv_en.pdf)
-- [Chinese version (中文版)](https://github.com/seisman/cv/raw/gh-pages/DTian_cv_cn.pdf)
+- [Chinese version](https://github.com/seisman/cv/raw/gh-pages/DTian_cv_cn.pdf)
 
 ## Build
 
@@ -24,7 +24,7 @@ I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
 
 2. 	Install LaTeX packages needed by the CV template:
 
-		make install_tex
+		make install_packages
 
 3. 	Build the CV:
 
