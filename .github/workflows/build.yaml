@@ -6,7 +6,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
   # Schedule monthly builds
   schedule:
     - cron: '0 0 1 * *'
