@@ -7,9 +7,6 @@ on:
   push:
     branches:
       - main
-  # Schedule monthly builds
-  schedule:
-    - cron: '0 0 1 * *'
 
 jobs:
   build:
@@ -25,11 +22,11 @@ jobs:
 
       - name: Install TinyTeX
         run: |
-          curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+          make install_tex
           echo "${HOME}/bin" >> $GITHUB_PATH
 
       - name: Install LaTeX packages
-        run: make install_tex install_packages
+        run: make install_packages
 
       - name: Build CV
         run: make
