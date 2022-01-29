@@ -66,7 +66,7 @@
 
 % 以“年/月”格式显示日期
 \usepackage{datetime}
-\newdateformat{monthyear}{\THEYEAR/\THEMONTH}
+\newdateformat{monthyear}{\THEYEAR/\twodigit{\THEMONTH}}
 
 % 设置每节标题的前后空白
 \usepackage{titlesec}

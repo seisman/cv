@@ -67,7 +67,7 @@
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
-\newdateformat{monthyear}{\THEYEAR/\THEMONTH}
+\newdateformat{monthyear}{\THEYEAR/\twodigit{\THEMONTH}}
 
 % Control the spacing before and after section title
 \usepackage{titlesec}
