@@ -22,6 +22,7 @@ jobs:
 
       - name: Install TinyTeX
         run: |
+          tlmgr update --self
           make install_tex
           echo "${HOME}/bin" >> $GITHUB_PATH
 
