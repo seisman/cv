@@ -21,13 +21,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install TinyTeX
-        run: |
-          tlmgr update --self
+        run: |          
           make install_tex
           echo "${HOME}/bin" >> $GITHUB_PATH
 
       - name: Install LaTeX packages
-        run: make install_packages
+        run: |
+          tlmgr update --self
+          make install_packages
 
       - name: Build CV
         run: make
