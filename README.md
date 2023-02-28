@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/seisman/cv/actions/workflows/build.yaml/badge.svg)](https://github.com/seisman/cv/actions/workflows/build.yaml)
 
-These are the LaTeX sources for my academic CV.
+These are the LaTeX source files for my academic CV.
 
 ## Download
 
