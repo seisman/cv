@@ -1,6 +1,7 @@
 # TIAN Dongdong (田冬冬)'s Curriculum Vitae
 
 [![Build](https://github.com/seisman/cv/actions/workflows/build.yaml/badge.svg)](https://github.com/seisman/cv/actions/workflows/build.yaml)
+[![GitHub](https://img.shields.io/github/license/seisman/cv)](https://github.com/seisman/cv/blob/main/LICENSE.txt)
 
 These are the LaTeX source files for my academic CV.
 
@@ -29,6 +30,10 @@ I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
 3. 	Build the CV:
 
 		make
+
+## License
+
+The CV template is released under the terms of the BSD 3-clause License.
 
 ## Acknowledgemnt
 
