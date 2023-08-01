@@ -9,6 +9,7 @@ on:
 
 jobs:
   remind:
+    name: Review CV
     runs-on: ubuntu-latest
     steps:
     - name: Get current date
