@@ -1,0 +1,27 @@
+#
+# Create an issue to remind me to review/update my CV.
+#
+name: Review reminder
+on:
+  schedule:
+    # 10 am on the first day of every month
+    - cron: '0 10 1 * *'
+
+jobs:
+  remind:
+    name: Review CV
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y/%m')" >> $GITHUB_OUTPUT
+
+      - uses: nashmaniac/create-issue-action@v1.2
+        name: Create an reminder
+        with:
+          title: Review the CV for ${{ steps.date.outputs.date }}
+          token: ${{secrets.GITHUB_TOKEN}}
+          body: |
+            Any activity in the last month?
+            It's time to review my activities in the last month and update the CV.
+
