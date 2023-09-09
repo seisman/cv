@@ -12,16 +12,23 @@ jobs:
     name: Review CV
     runs-on: ubuntu-latest
     steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y/%m')" >> $GITHUB_OUTPUT
 
-      - uses: nashmaniac/create-issue-action@v1.2
-        name: Create an reminder
-        with:
-          title: Review the CV for ${{ steps.date.outputs.date }}
-          token: ${{secrets.GITHUB_TOKEN}}
-          body: |
-            Any activity in the last month?
-            It's time to review my activities in the last month and update the CV.
-
+      - name: Create an reminder
+        run: |
+          title="Review the CV for ${{ steps.date.outputs.date }}"
+          read -d "#" body <<- EOF
+          Any activity in the last month?
+          It's time to review my activities in the last month and update the CV.
+          #
+          EOF
+          echo $body
+          gh issue create --title "$title" --body "$body"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
