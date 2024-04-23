@@ -44,6 +44,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         if: github.event_name == 'push'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ github.token }}
           publish_dir: ./public
           force_orphan: true

@@ -31,4 +31,4 @@ jobs:
           echo $body
           gh issue create --title "$title" --body "$body"
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{ github.token }}
