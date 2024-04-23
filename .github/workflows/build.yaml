@@ -21,15 +21,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install TinyTeX
-        run: |
-          make install_tex
-          echo "${HOME}/bin" >> $GITHUB_PATH
+      - name: Tectonic Cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
 
-      - name: Install LaTeX packages
-        run: |
-          tlmgr update --self
-          make install_packages
+      - name: Setup tectonic
+        uses: wtfjoke/setup-tectonic@v3
+        with:
+          github-token: ${{ github.token }}
 
       - name: Build CV
         run: make
