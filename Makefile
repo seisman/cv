@@ -1,19 +1,10 @@
-all: cv_en.pdf cv_cn.pdf clean
+all: cv_en.pdf cv_cn.pdf
 
-install_tex:
-	curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
-
-install_packages:
-	tlmgr install anyfontsize fontawesome5 ctex datetime enumitem environ etaremune \
-		everysel fancyhdr fmtcount geometry hyperref lastpage ltablex \
-		sourcesanspro titlesec xcolor
+install:
+	curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net |sh
 
 cv_en.pdf: en/*.tex
-	cd en && latexmk -xelatex cv.tex
+	tectonic en/cv.tex
 
 cv_cn.pdf: cn/*.tex
-	cd cn && latexmk -xelatex cv.tex
-
-clean:
-	cd en && latexmk -c && rm -f *.xdv
-	cd cn && latexmk -c && rm -f *.xdv
+	tectonic cn/cv.tex

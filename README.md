@@ -14,20 +14,17 @@ Download my CV:
 
 ## Build
 
-To build the CV, you need to have LaTeX installed. The full LaTeX distribution
-(e.g., TeXLive on Linux or MacTeX on macOS) are usually too big (>5 GB).
-I recommend to install the lightweight [TinyTeX](https://yihui.org/tinytex/)
-(< 100MB).
+To build the CV, you need to have LaTeX installed. The full LaTeX distribution (e.g.,
+TeXLive on Linux or MacTeX on macOS) are usually too big (>5 GB).
 
-1. 	Install TinyTeX:
+I recommend to install the lightweight [Tectonic](https://tectonic-typesetting.github.io/en-US/index.html)
+which automatically downloads necessary dependencies.
 
-		curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+1.  Install Tectonic:
 
-2. 	Install LaTeX packages needed by the CV template:
+        curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh
 
-		make install_packages
-
-3. 	Build the CV:
+2. 	Build the CV:
 
 		make
 
