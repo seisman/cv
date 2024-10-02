@@ -4,8 +4,8 @@
 name: Review reminder
 on:
   schedule:
-    # 10 am on the first day of every month
-    - cron: '0 10 1 * *'
+    # 10 am on the 28th day of every month
+    - cron: '0 10 28 * *'
 
 jobs:
   remind:
@@ -24,8 +24,8 @@ jobs:
         run: |
           title="Review the CV for ${{ steps.date.outputs.date }}"
           read -d "#" body <<- EOF
-          Any activity in the last month?
-          It's time to review my activities in the last month and update the CV.
+          Any activity in this month?
+          It's time to review my activities in this month and update the CV.
           #
           EOF
           echo $body
