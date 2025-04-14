@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - main
+  release:
+    types:
+      - published
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -50,3 +53,9 @@ jobs:
           github_token: ${{ github.token }}
           publish_dir: ./public
           force_orphan: true
+
+      - name: Upload the two pdf files as release assets
+        run: gh release upload ${{ github.ref_name }} ./public/DTian_cv_cn.pdf ./public/DTian_cv_en.pdf
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
