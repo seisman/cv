@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-tectonic-
 
       - name: Setup tectonic
-        uses: wtfjoke/setup-tectonic@v3
+        uses: wtfjoke/setup-tectonic@v4
         with:
           github-token: ${{ github.token }}
 
