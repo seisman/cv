@@ -36,6 +36,7 @@ jobs:
         uses: wtfjoke/setup-tectonic@v4
         with:
           github-token: ${{ github.token }}
+          tectonic-version: 0.15
 
       - name: Build CV
         run: make
