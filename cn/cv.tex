@@ -55,6 +55,9 @@
 \usepackage{fontspec}
 \usepackage[default,semibold]{sourcesanspro}
 
+% Use fontawesome icons
+\usepackage{fontawesome}
+
 % 对列表各项逆序编号（用于对文章进行编号）
 \usepackage[itemsep=2pt]{etaremune}
 
@@ -148,13 +151,13 @@
   \kaishu
   \fontsize{12pt}{15pt}\selectfont
   \begin{flushleft}
-    Email: \href{mailto:\Email}{\texttt{\Email}}
+    \faEnvelope\ \href{mailto:\Email}{\texttt{\Email}}
     \\
-    ORCID: \href{https://orcid.org/\Orcid}{\Orcid}
+    \faLink\ \href{https://orcid.org/\Orcid}{\Orcid}
     \\
-    Website: \href{https://\Website}{\Website}
+    \faGlobe\ \href{https://\Website}{\Website}
     \\
-    GitHub: \href{https://github.com/\Github}{\Github}
+    \faGithub\ \href{https://github.com/\Github}{\Github}
   \end{flushleft}
 \end{minipage}
 \vspace{0.2cm}
