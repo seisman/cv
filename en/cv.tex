@@ -56,9 +56,6 @@
 \usepackage{fontspec}
 \usepackage[default,semibold]{sourcesanspro}
 
-% Use fontawesome icons
-\usepackage[fixed]{fontawesome5}
-
 % numbering items in reversed orders
 \usepackage[itemsep=2pt]{etaremune}
 
@@ -151,13 +148,13 @@
 \begin{minipage}[t]{0.3\textwidth}
   \fontsize{12pt}{15pt}\selectfont
   \begin{flushleft}
-    \faEnvelope \href{mailto:\Email}{\Email}
+    Email: \href{mailto:\Email}{\Email}
     \\
-    \faOrcid \href{https://orcid.org/\Orcid}{\Orcid}
+    ORCID: \href{https://orcid.org/\Orcid}{\Orcid}
     \\
-    \faGlobe \href{https://\Website}{\Website}
+    Website: \href{https://\Website}{\Website}
     \\
-    \faGithub \href{https://github.com/\Github}{\Github}
+    GitHub: \href{https://github.com/\Github}{\Github}
   \end{flushleft}
 \end{minipage}
 }
