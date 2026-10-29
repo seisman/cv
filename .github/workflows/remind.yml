@@ -4,15 +4,18 @@
 name: Review reminder
 on:
   schedule:
-    # 10 am on the 28th day of every month
-    - cron: '0 10 28 * *'
+    # 10 am China time (02:00 UTC) on the 28th day of every month
+    - cron: '0 2 28 * *'
 
 jobs:
   remind:
     name: Review CV
-    runs-on: ubuntu-latest
-    steps:
+    runs-on: ubuntu-slim
+    permissions:
+      contents: read
+      issues: write
 
+    steps:
       - name: Checkout
         uses: actions/checkout@v7
 
@@ -20,7 +23,7 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y/%m')" >> $GITHUB_OUTPUT
 
-      - name: Create an reminder
+      - name: Create a reminder
         run: |
           title="Review the CV for ${{ steps.date.outputs.date }}"
           read -d "#" body <<- EOF
