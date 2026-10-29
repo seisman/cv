@@ -91,7 +91,7 @@
 \usepackage{environ}
 \NewEnviron{EntriesTable}[3]{
 \vspace{-1.25em}
-\begin{tabularx}{\textwidth}{p{#1\textwidth}@{\hspace{#2\textwidth}}p{#3\textwidth}}
+\begin{tabularx}{\textwidth}{@{}p{#1\textwidth}@{\hspace{#2\textwidth}}p{#3\textwidth}@{}}
     \BODY
 \end{tabularx}
 }
