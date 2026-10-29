@@ -50,7 +50,7 @@ jobs:
           mv en/cv.pdf public/DTian_cv_en.pdf
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         if: github.event_name == 'push'
         with:
           path: ./public
