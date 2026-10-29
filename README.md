@@ -6,23 +6,19 @@
 
 These are the LaTeX source files for my academic CV.
 
-## Download
+## Preview
 
-Download my CV:
+Preview my CV:
 
 - [English version](https://seisman.github.io/cv/DTian_cv_en.pdf)
 - [Chinese version](https://seisman.github.io/cv/DTian_cv_cn.pdf)
 
-The publishing workflow uses GitHub Pages. In the repository's **Settings → Pages**,
-set **Source** to **GitHub Actions**.
-
 ## Build
 
-To build the CV, you need to have LaTeX installed. The full LaTeX distribution (e.g.,
-TeXLive on Linux or MacTeX on macOS) are usually too big (>5 GB).
-
-I recommend to install the lightweight [Tectonic](https://tectonic-typesetting.github.io/en-US/index.html)
-which automatically downloads necessary dependencies.
+To build the CV, you need Make and
+[Tectonic](https://tectonic-typesetting.github.io/en-US/index.html).
+Tectonic automatically downloads the required TeX packages and fonts, so a separate
+LaTeX distribution is not required.
 
 1.  Install Tectonic:
 
@@ -32,10 +28,12 @@ which automatically downloads necessary dependencies.
 
 		make
 
+The generated PDFs are `en/cv.pdf` (English) and `cn/cv.pdf` (Chinese).
+
 ## License
 
 The CV template is released under the terms of the BSD 3-clause License.
 
-## Acknowledgemnt
+## Acknowledgment
 
 The CV template is modified from https://github.com/leouieda/cv.
