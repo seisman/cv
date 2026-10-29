@@ -10,8 +10,11 @@ These are the LaTeX source files for my academic CV.
 
 Download my CV:
 
-- [English version](https://github.com/seisman/cv/raw/gh-pages/DTian_cv_en.pdf)
-- [Chinese version](https://github.com/seisman/cv/raw/gh-pages/DTian_cv_cn.pdf)
+- [English version](https://seisman.github.io/cv/DTian_cv_en.pdf)
+- [Chinese version](https://seisman.github.io/cv/DTian_cv_cn.pdf)
+
+The publishing workflow uses GitHub Pages. In the repository's **Settings → Pages**,
+set **Source** to **GitHub Actions**.
 
 ## Build
 
