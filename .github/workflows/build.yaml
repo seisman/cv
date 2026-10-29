@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     name: Build
     permissions:
       contents: write
@@ -34,11 +34,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-tectonic-
 
+      - name: Install Tectonic runtime dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y libgraphite2-3
+
       - name: Setup tectonic
         uses: wtfjoke/setup-tectonic@v4
         with:
           github-token: ${{ github.token }}
           tectonic-version: 0.15
+
+      - name: Verify Tectonic
+        run: tectonic --version
 
       - name: Build CV
         run: make
@@ -75,4 +83,4 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
